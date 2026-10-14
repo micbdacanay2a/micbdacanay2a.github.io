@@ -1,5 +1,3 @@
-"use strict";
-
 document.addEventListener("DOMContentLoaded", function () {
      loadPortfolio();
      setupContactForm();
@@ -10,11 +8,20 @@ async function loadPortfolio() {
      const projectsMessage = document.getElementById("projectsMessage");
 
  try {
-     const response = await fetch("data/projects.json");
+     const response = await fetch("/data/projects.json");
      if (!response.ok) throw new Error("Unable to load projects.json");
 
      const data = await response.json();
-     
+     const username = data.githubUsername;
+     console.log("micbdacanay2a:", username);
+
+     loadGitHubRepositories(username);
+
+     const githubProfileLink = document.getElementById("githubProfile");
+     if (githubProfileLink) {
+         githubProfileLink.href = "https://github.com/" + username;
+     }
+
      document.getElementById("studentName").textContent = data.name;
      document.getElementById("tagline").textContent = data.tagline;
      document.getElementById("introduction").textContent = data.introduction;
@@ -128,6 +135,7 @@ async function loadGitHubRepositories(username) {
  profileLink.href = "https://github.com/" + encodeURIComponent(username);
 
  try {
+     console.log("micbdacanay2a:", username);
      const apiURL = "https://api.github.com/users/" +
          encodeURIComponent(username) +
          "/repos?sort=updated&per_page=5&type=public";

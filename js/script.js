@@ -17,6 +17,8 @@ async function loadPortfolio() {
 
      loadGitHubRepositories(username);
 
+      const reposContainer = document.getElementById("github-repos");
+
      const githubProfileLink = document.getElementById("github-profile");
      if (githubProfileLink) {
          githubProfileLink.href = "https://github.com/" + username;

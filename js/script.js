@@ -127,7 +127,9 @@ async function loadGitHubRepositories(username) {
      const container = document.getElementById("githubRepos");
      const message = document.getElementById("githubMessage");
      const profileLink = document.getElementById("githubProfile");
+     if (container) {
      container.replaceChildren();
+     }
 
  if (!username || username === "yourusername") {
      message.textContent = "Update githubUsername in projects.json to your actual username.";

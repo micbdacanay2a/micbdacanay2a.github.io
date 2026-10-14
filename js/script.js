@@ -87,7 +87,6 @@ function displayProjects(projects) {
      card.className = "project-card";
 
      const image = document.createElement("img");
-     image.src = project.image;
      image.alt = "Screenshot of " + project.title;
      image.loading = "lazy";
 

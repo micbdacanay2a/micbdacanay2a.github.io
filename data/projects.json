@@ -1,0 +1,32 @@
+{
+     "name": "Michael Dale B. Dacanay",
+     "tagline": "Aspiring Web Developer",
+     "introduction": "I am an IT student passionate about building modern websites, developing applications and exploring innovate technologies while continuously improving my programming skills.",
+     "profileImage": "images/profile.jpg",
+ "about": {
+     "biography": "I enjoy learning programming, exploring technology, and developing practical applications.",
+     "school": "Nueva Vizcaya State University",
+     "program": "Bachelor of Science in Information Technology",
+     "graduation": "Expected graduation: 2029",
+     "careerGoal": "To become a professional software developer.",
+     "interests": "Web development, databases, UI design, and problem solving."
+ },
+ "skills": ["HTML", "CSS", "JavaScript", "Java", "MySQL", "Problem Solving"],
+ "projects": [
+ {
+     "title": "My Portfolio",
+     "description": "A responsive personal portfolio website showcasing my background and technical skills. It features an interactive interface and displays my latest public GitHub respositories using the GitHub API.",
+     "technologies": "HTML, CSS, JavaScript, JSON",
+     "role": "Designed and developed the website using HTML, CSS and JavaScript.", 
+     "image": "images/image.png",
+     "link": "https://github.com/michaeldaledacanay-byte"
+ }
+
+ ],
+ "githubUsername": "michaeldaledacanay-byte",
+ "contact": {
+ "email": "michaeldaledacanay@gmail.com",
+ "location": "Nueva Vizcaya, Philippines",
+ "linkedin": "https://www.linkedin.com/"
+ }
+}

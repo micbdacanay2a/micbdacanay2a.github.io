@@ -161,7 +161,9 @@ async function loadGitHubRepositories(username) {
      const item = document.createElement("li");
      const link = document.createElement("a");
      link.href = repo.html_url;
-     link.textContent = repo.name;
+    link.textContent = "🔗 " + repo.name + " - View Repository";
+link.style.textDecoration = "underline";
+link.style.color = "#58a6ff";
      link.target = "_blank";
      link.rel = "noopener noreferrer";
 

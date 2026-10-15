@@ -12,16 +12,14 @@ async function loadPortfolio() {
      if (!response.ok) throw new Error("Unable to load projects.json");
 
      const data = await response.json();
-     const username = data.githubUsername;
-     console.log("micbdacanay2a:", username);
+     const micbdacanay2a = data.githubUsername;
+     console.log("micbdacanay2a:", micbdacanay2a);
 
-     loadGitHubRepositories(username);
-
-      const reposContainer = document.getElementById("github-repos");
+     loadGitHubRepositories(micbdacanay2a);
 
      const githubProfileLink = document.getElementById("github-profile");
      if (githubProfileLink) {
-         githubProfileLink.href = "https://github.com/" + username;
+         githubProfileLink.href = "https://micbdacanay2a.github.com/" + micbdacanay2a;
      }
 
      document.getElementById("studentName").textContent = data.name;
@@ -122,31 +120,32 @@ function displayProjects(projects) {
  });
 }
 
-async function loadGitHubRepositories(username) {
-     const container = document.getElementById("githubRepos");
-     const message = document.getElementById("githubMessage");
-     const profileLink = document.getElementById("githubProfile");
-     if (container) {
-     container.replaceChildren();
-     }
+async function loadGitHubRepositories(micbdacanay2a) {
+  const container = document.getElementById("githubRepos");
+  const message = document.getElementById("githubMessage");
+  const profileLink = document.getElementById("githubProfile");
+  
+  if (container) {
+    container.replaceChildren();
+  }
 
- if (!username || username === "yourusername") {
-     message.textContent = "Update githubUsername in projects.json to your actual username.";
-     return;
- }
+  // FIXED: don't treat your real username as placeholder
+  if (!micbdacanay2a || micbdacanay2a === "YOUR_USERNAME" || micbdacanay2a === "YOUR_GITHUB_USERNAME") {
+    if (message) message.textContent = "Update githubUsername in projects.json to your actual username.";
+    return;
+  }
 
- profileLink.href = "https://github.com/" + encodeURIComponent(username);
+  if (profileLink) {
+    profileLink.href = "https://github.com/" + encodeURIComponent(micbdacanay2a);
+  }
 
  try {
-     console.log("micbdacanay2a:", username);
+     console.log("micbdacanay2a:", micbdacanay2a);
      const apiURL = "https://api.github.com/users/" +
-         encodeURIComponent(username) +
+         encodeURIComponent(micbdacanay2a) +
          "/repos?sort=updated&per_page=5&type=public";
 
          const response = await fetch(apiURL);
-
-         if (!response.ok)
-             throw new Error("GitHub API request failed");
 
      const repositories = await response.json();
 
@@ -160,8 +159,7 @@ async function loadGitHubRepositories(username) {
      repositories.forEach(function (repo) {
      const item = document.createElement("li");
      const link = document.createElement("a");
-     link.href = repo.html_url;
-    link.textContent = "🔗 " + repo.name + " - View Repository";
+     link.textContent = "🔗 " + repo.name + " - View Repository";
 link.style.textDecoration = "underline";
 link.style.color = "#58a6ff";
      link.target = "_blank";
@@ -169,7 +167,7 @@ link.style.color = "#58a6ff";
 
      const language = document.createElement("p");
      language.className = "repository-language";
-     anguage.textContent = "Main language: " + (repo.language || "Not specified");
+     language.textContent = "Main language: " + (repo.language || "Not specified");
 
      item.append(link, language);
      container.appendChild(item);

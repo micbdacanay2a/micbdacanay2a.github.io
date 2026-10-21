@@ -1,17 +1,17 @@
 {
      "name": "Michael Dale B. Dacanay",
-     "tagline": "Aspiring Web Developer",
+     "tagline": "Aspiring Network Administrator",
      "introduction": "I am an IT student passionate about building modern websites, developing applications and exploring innovate technologies while continuously improving my programming skills.",
      "profileImage": "images/profile.jpg",
  "about": {
-     "biography": "I enjoy learning programming, exploring technology, and developing practical applications.",
+     "biography": "I enjoy learning programming, exploring technology, and troubleshooting network problems.",
      "school": "Nueva Vizcaya State University",
      "program": "Bachelor of Science in Information Technology",
      "graduation": "Expected graduation: 2029",
-     "careerGoal": "To become a professional software developer.",
-     "interests": "Web development, databases, UI design, and problem solving."
+     "careerGoal": "To become a professional Network Administrator.",
+     "interests": "Cybersecurity, troubleshooting, programming, and problem solving."
  },
- "skills": ["HTML", "CSS", "JavaScript", "Java", "MySQL", "Problem Solving"],
+ "skills": ["HTML", "CSS", "JavaScript", "Java", "Troubleshooting", "Problem Solving"],
  "projects": [
  {
      "title": "My Portfolio",

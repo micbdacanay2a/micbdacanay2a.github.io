@@ -160,8 +160,8 @@ async function loadGitHubRepositories(micbdacanay2a) {
      const item = document.createElement("li");
      const link = document.createElement("a");
      link.textContent = "🔗 " + repo.name + " - View Repository";
-link.style.textDecoration = "underline";
-link.style.color = "#58a6ff";
+     link.style.textDecoration = "underline";
+     link.style.color = "#58a6ff";
      link.target = "_blank";
      link.rel = "noopener noreferrer";
 

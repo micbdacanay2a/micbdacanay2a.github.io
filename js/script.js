@@ -38,7 +38,7 @@ async function loadPortfolio() {
      document.getElementById("contactEmail").href = "mailto:" + data.contact.email;
      document.getElementById("contactLocation").textContent =
          "Location: " + data.contact.location;
-     document.getElementById("linkedinLink").href = data.contact.linkedin;
+    
      document.getElementById("footerText").textContent = 
             "\u00A9 " + new Date().getFullYear() + " " + data.name + " | Student Portfolio";
             
